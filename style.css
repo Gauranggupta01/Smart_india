@@ -1,0 +1,118 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    font-size: 16px;
+}
+
+.navbar {
+    background-color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+}
+
+.nav-links .menu {
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 1rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+/* Dropdown menu styling */
+.nav-dropdown .dropdown {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    margin-top: 1rem;
+}
+
+.nav-dropdown:hover .dropdown {
+    display: block;
+}
+
+.dropdown li {
+    padding: 0.5rem 1rem;
+}
+
+.dropdown li a {
+    color: white;
+}
+
+.dropdown li a:hover {
+    background-color: #555;
+}
+
+/* Responsive hamburger menu */
+.hamburger {
+    display: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+#checkbox_toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 80px;
+        left: 0;
+        background-color: #333;
+        z-index: 1;
+    }
+
+    .menu li {
+        margin: 0;
+        text-align: center;
+        padding: 1rem 0;
+        width: 100%;
+    }
+
+    .menu li a {
+        width: 100%;
+        display: block;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    #checkbox_toggle:checked + .hamburger + .menu {
+        display: flex;
+    }
+}
