@@ -22,15 +22,18 @@
             width: 100%;
             z-index: 1000;
             border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            right: 4px;
         }
 
         .navbar-nav .nav-link {
             color: white !important;
             font-size: 1.1rem;
+            right: 100px;
         }
 
         .navbar-nav .nav-link:hover {
             color: #f0f0f0 !important;
+            right: 40px;
         }
 
         /* Header Section */
@@ -182,6 +185,14 @@
             font-size: 1.2rem;
         }
 
+        #navbarNav{
+            position: relative;
+            right: 70px;
+        }
+        .nav-link{
+            margin-left: 15px;
+        }
+
         /* Footer Section */
         .footer {
             background-color: #343a40;
@@ -250,7 +261,7 @@
                             aria-expanded="false">
                             Services
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul class="dropdown-menu" id="serve">
                             <li><a class="dropdown-item" href="#govt-schemes">Government Schemes</a></li>
                             <li><a class="dropdown-item" href="#soil-health">Soil Health</a></li>
                             <li><a class="dropdown-item" href="#weather-forecast">Weather Forecast</a></li>
@@ -321,10 +332,10 @@
                 </div>
                 
 
-                <!-- Disease Prediction -->
+                <!--Water Footprints -->
                 <div class="service-box" id="disease-prediction">
                     <i class="bi bi-droplet icon"style="font-size: 2rem; margin-bottom: 10px;"></i>
-                    <h3><a href="#">Water Footprint</a></h3>
+                    <h3><a href="./sih1_water.html">Water Footprint</a></h3>
                     <p>Water is one of the most precious resources in agriculture, and understanding how much water is used to produce different crops is key to ensuring sustainable farming practices.</p>
                 </div>
                 
