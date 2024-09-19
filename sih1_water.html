@@ -3,36 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>water footprints</title>
+    <title>Water Footprints</title>
     <style>
-        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #3498db;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 15px;
+            width: 90%;
+        }
+
+        .container div {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            flex: 1 1 24%;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            min-width: 220px;
+        }
+
+        .container div:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            transform: translate(50px, 60px) scale(1.5);
+        }
+        .container div img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            padding: 15px;
+            border-radius: 50px;
+        }
+
+        .container div p {
+            padding: 10px;
+            font-size: 1.1rem;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        #button {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        #button:hover {
+            background-color: #2980b9;
+        }
+
+        @media (max-width: 768px) {
+            .container div {
+                flex: 1 1 48%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container div {
+                flex: 1 1 100%;
+            }
+        }
     </style>
 </head>
 <body>
-    <div id="1">
-            <img src="" alt="">
-            <img src="" alt="">
-            <img src="" alt="">
-            <img src="" alt="">
+    <h1>Water Footprints of Common Fruits and Vegetables</h1>
+
+    <div class="container" id="container1">
+        <div>
+            <img src="./wheat.jpg" alt="Wheat">
+            <p>Wheat</p>
+        </div>
+        <div>
+            <img src="./rice.jpg" alt="Rice">
+            <p>Rice</p>
+        </div>
+        <div>
+            <img src="./blueberry.jpg" alt="Blueberry">
+            <p>Blueberry</p>
+        </div>
+        <div>
+            <img src="./coconut.jpg" alt="Coconut">
+            <p>Coconut</p>
+        </div>
     </div>
-    <div id="2">
-            <img src="" alt="">
-            <img src="" alt="">
-            <img src="" alt="">
-            <img src="" alt="">
+    
+    <div class="container" id="container2">
+        <div>
+            <img src="./corn.jpg" alt="Corn">
+            <p>Corn</p>
+        </div>
+        <div>
+            <img src="./grapes.jpg" alt="Grapes">
+            <p>Grapes</p>
+        </div>
+        <div>
+            <img src="./groundnut.jpg" alt="Groundnut">
+            <p>Soyabean</p>
+        </div>
+        <div>
+            <img src="./onion.jpg" alt="Onion">
+            <p>Onion</p>
+        </div>
     </div>
-    <div id="3">
-            <img src="" alt="">
-            <img src="" alt="">
-            <img src="" alt="">
-            <img src="" alt="">
+    
+    <div class="container" id="container3">
+        <div>
+            <img src="./banana.jpg" alt="Banana">
+            <p>Banana</p>
+        </div>
+        <div>
+            <img src="./orange.jpg" alt="Orange">
+            <p>Orange</p>
+        </div>
+        <div>
+            <img src="./apple.jpg" alt="Apple">
+            <p>Apple</p>
+        </div>
+        <div>
+            <img src="./peas.jpg" alt="Peas">
+            <p>Peas</p>
+        </div>
     </div>
-    <div id="4">
-            <img src="" alt="">
-            <img src="" alt="">
-            <img src="" alt="">
-            <img src="" alt="">
+    
+    <div class="container" id="container4">
+        <div>
+            <img src="./potato.jpg" alt="Potato">
+            <p>Potato</p>
+        </div>
+        <div>
+            <img src="./strawberry.jpg" alt="Strawberry">
+            <p>Strawberry</p>
+        </div>
+        <div>
+            <img src="./tomato.jpg" alt="Tomato">
+            <p>Tomato</p>
+        </div>
+        <div>
+            <img src="./nuts.jpg" alt="Nuts">
+            <p>Groundnut</p>
+        </div>
     </div>
-    </body>
 </body>
 </html>

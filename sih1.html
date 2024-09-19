@@ -165,6 +165,59 @@
             text-decoration: underline;
         }
 
+        .headd {
+            margin-top: 50px;
+            background-color: #b9e4bb;
+            color: rgb(14, 14, 14);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .bigmenu {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+
+        }
+
+        .sec1 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 35px;
+            width: 80vw;
+        }
+
+        .box1 {
+            background-color: white;
+            border: 2px solid #ddd;
+            padding: 30px 60px;
+            margin: auto;
+            text-align: center;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .box1:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .box1 img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        .box1 h4 {
+            font-size: 24px;
+            margin-top: 10px;
+            color: #4CAF50;
+        }
+
+        .box1 p {
+            font-size: 16px;
+            color: #666;
+        }
+
         /* About Us Section */
         .about-section {
             background-color: #6db3f2;
@@ -185,11 +238,12 @@
             font-size: 1.2rem;
         }
 
-        #navbarNav{
+        #navbarNav {
             position: relative;
             right: 70px;
         }
-        .nav-link{
+
+        .nav-link {
             margin-left: 15px;
         }
 
@@ -284,6 +338,31 @@
         </div>
     </header>
 
+    <div class="bigmenu"></div>
+    <div class="sec1">
+        <div class="box1">
+            <img src="./clock.jpg" alt="Crop Diagnosis">
+            <h4>1.7 sec</h4>
+            <p>Get your crop diagnosed in 1.7 sec</p>
+        </div>
+        <div class="box1 box">
+            <img height="150px" src="./fruits.jpg" alt="Crop Detection">
+            <h4>32</h4>
+            <p>Detect 32 different types of crops</p>
+        </div>
+        <div class="box1">
+            <img src="./med.jpg" Disease Treatment">
+            <h4>350</h4>
+            <p>Find treatments for more than 350 diseases</p>
+        </div>
+        <div class="box1">
+            <img src="./landscape.jpg" Farming Improvement">
+            <h4>80%</h4>
+            <p>Farmers report an 80% improvement in farming efficiency</p>
+        </div>
+    </div>
+    </div>
+
     <!-- Main Content Section -->
     <div class="main-content">
         <div class="container">
@@ -321,7 +400,7 @@
                     <p>Receive accurate weather forecasts to help plan your farming activities and protect crops from
                         adverse conditions.</p>
                 </div>
-                
+
 
                 <!-- Disease Prediction -->
                 <div class="service-box" id="disease-prediction">
@@ -330,22 +409,24 @@
                     <p>Leverage AI/ML technology to predict crop diseases early and take preventive actions to avoid
                         crop losses.</p>
                 </div>
-                
+
 
                 <!--Water Footprints -->
                 <div class="service-box" id="disease-prediction">
-                    <i class="bi bi-droplet icon"style="font-size: 2rem; margin-bottom: 10px;"></i>
+                    <i class="bi bi-droplet icon" style="font-size: 2rem; margin-bottom: 10px;"></i>
                     <h3><a href="./sih1_water.html">Water Footprint</a></h3>
-                    <p>Water is one of the most precious resources in agriculture, and understanding how much water is used to produce different crops is key to ensuring sustainable farming practices.</p>
+                    <p>Water is one of the most precious resources in agriculture, and understanding how much water is
+                        used to produce different crops is key to ensuring sustainable farming practices.</p>
                 </div>
-                
+
 
                 <!-- pesticides/fertilizers -->
                 <div class="service-box" id="disease-prediction">
                     <i class="bi bi-tree icon" style="font-size: 2rem; margin-bottom: 10px;"></i>
                     <h3><a href="#">Pesticides/Fertilizers</a></h3>
-                    <p>y empowering farmers with the knowledge to use pesticides more responsibly, we help improve crop quality, preserve soil health</p>
-                </div>  
+                    <p>y empowering farmers with the knowledge to use pesticides more responsibly, we help improve crop
+                        quality, preserve soil health</p>
+                </div>
 
                 <!-- Farmer Useful Things -->
                 <div class="service-box" id="farmer-resources">
@@ -363,6 +444,11 @@
                     </p>
                 </div>
             </div>
+            <div class="headd">
+                <h1>Welcome to the Advanced Crop Diagnostic Tool</h1>
+                <p>Providing solutions for sustainable and smart farming</p>
+            </div>
+
 
             <!-- About Us Section -->
             <div class="about-section" id="about">
