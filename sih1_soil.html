@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soil Health for Farmers</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Transparent Navbar */
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.5) !important;
+            position: absolute;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .navbar-nav .nav-link {
+            color: white !important;
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, #76b852, #8DC26F); /* Green gradient background */
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 10px;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+
+        /* Main Content */
+        .main-content {
+            background-color: #f3f4f6; /* Light gray background */
+            padding: 40px 20px;
+        }
+
+        .health-box {
+            background: white;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .health-box h3 {
+            margin-top: 0;
+        }
+
+        /* Footer Section */
+        .footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Transparent Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">Agro-Disease Platform</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#about">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="government-schemes.html">Government Schemes</a></li>
+                            <li><a class="dropdown-item" href="soil-health.html">Soil Health</a></li>
+                            <li><a class="dropdown-item" href="index.html#weather-forecast">Weather Forecast</a></li>
+                            <li><a class="dropdown-item" href="index.html#disease-prediction">Disease Prediction</a></li>
+                            <li><a class="dropdown-item" href="index.html#farmer-resources">Farmer Useful Things</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="header">
+        <h1>Soil Health for Sustainable Farming</h1>
+        <p>Learn how to maintain and improve soil health for long-term agricultural productivity and sustainability.</p>
+    </header>
+
+    <!-- Main Content Section -->
+    <div class="main-content">
+        <div class="container">
+            <div class="health-box">
+                <h3>Why Soil Health is Important?</h3>
+                <p>Soil health is the foundation of productive farming. Healthy soil promotes better crop yields, improves water retention, reduces the need for chemical fertilizers, and supports the environment.</p>
+            </div>
+
+            <div class="health-box">
+                <h3>Soil Testing and Analysis</h3>
+                <p>Regular soil testing helps farmers understand the nutrient composition of their soil, pH levels, and any deficiencies. This enables better decision-making when applying fertilizers and managing soil quality.</p>
+                <a href="#" class="btn btn-success">Find Soil Testing Centers</a>
+            </div>
+
+            <div class="health-box">
+                <h3>Best Practices for Improving Soil Health</h3>
+                <ul>
+                    <li>Use organic fertilizers to enhance nutrient levels.</li>
+                    <li>Practice crop rotation to prevent nutrient depletion.</li>
+                    <li>Implement no-till or minimum-till farming to maintain soil structure.</li>
+                    <li>Use cover crops to prevent soil erosion and improve organic matter.</li>
+                </ul>
+                <a href="#" class="btn btn-success">Learn More Best Practices</a>
+            </div>
+
+            <div class="health-box">
+                <h3>Government Initiatives for Soil Health</h3>
+                <p>The government offers various schemes to support soil health management, including subsidies for organic fertilizers, soil testing programs, and farmer education initiatives.</p>
+                <a href="government-schemes.html" class="btn btn-success">Explore Government Schemes</a>
+            </div>
+
+            <!-- Add more soil health information as needed -->
+
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 Agro-Tech Solutions. Empowering Farmers with Technology.</p>
+    </footer>
+
+    <!-- Bootstrap and JS Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

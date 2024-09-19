@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Driven Crop Disease Identification Platform</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Transparent Navbar */
+        .navbar {
+            background-color: rgba(0, 0, 0, 0.7) !important;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .navbar-nav .nav-link {
+            color: white !important;
+            font-size: 1.1rem;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #f0f0f0 !important;
+        }
+
+        /* Header Section */
+        .header {
+            background-image: url('https://t3.ftcdn.net/jpg/02/41/90/60/360_F_241906053_sf4LigJA8L2u6FWXov0tJZd4Y1fTnWzW.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 80vh;
+            color: white;
+            display: grid;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+        }
+
+        .header h1 {
+            font-size: 4.5rem;
+            font-weight: 700;
+            margin: 0;
+        }
+
+        .header p {
+            font-size: 1.5rem;
+            margin-top: 20px;
+            font-weight: 300;
+        }
+
+        .header .btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.1rem;
+            border-radius: 25px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .header .btn:hover {
+            background-color: #218838;
+        }
+
+        /* Main Content Section */
+        .main-content {
+            padding: 60px 20px;
+            background-color: #ffffff;
+        }
+
+        /* Flexbox Layout for Scan and Services */
+        .services-section,
+        .scan-section {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        /* Full-width Scan Box */
+        .scan-box {
+            background: linear-gradient(135deg, #ff9966, #ff5e62);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            flex-basis: 100%;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .scan-box h3 {
+            margin-bottom: 15px;
+            font-size: 2rem;
+        }
+
+        .scan-box p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        /* Hover effect for all boxes */
+        .scan-box:hover,
+        .service-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Service Box */
+        .service-box {
+            background: linear-gradient(135deg, #6db3f2, #1e3c72);
+            /* Gradient background */
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            flex-basis: 23%;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-box h3 {
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+
+        .service-box p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .service-box a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .service-box a:hover {
+            text-decoration: underline;
+        }
+
+        /* About Us Section */
+        .about-section {
+            background-color: #6db3f2;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-radius: 15px;
+            margin-top: 40px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .about-section h2 {
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .about-section p {
+            font-size: 1.2rem;
+        }
+
+        /* Footer Section */
+        .footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        /* Button styles */
+        .btn-scan {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 1.1rem;
+        }
+
+        .btn-scan a {
+            text-decoration: none;
+            color: white;
+        }
+
+        .btn-scan:hover {
+            background-color: green;
+        }
+
+        /* Responsiveness */
+        @media (max-width: 768px) {
+
+            .services-section,
+            .scan-section {
+                flex-direction: column;
+            }
+
+            .service-box,
+            .scan-box {
+                flex-basis: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Transparent Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Agro-Disease Platform</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Services
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#govt-schemes">Government Schemes</a></li>
+                            <li><a class="dropdown-item" href="#soil-health">Soil Health</a></li>
+                            <li><a class="dropdown-item" href="#weather-forecast">Weather Forecast</a></li>
+                            <li><a class="dropdown-item" href="#disease-prediction">Disease Prediction</a></li>
+                            <li><a class="dropdown-item" href="#farmer-resources">Farmer Useful Things</a></li>
+                            <li><a class="dropdown-item" href="#market-price">Market Price</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section with Background Image -->
+    <header class="header">
+        <div>
+            <h1>Agro-Disease Platform</h1>
+            <p>Helping Farmers Identify and Manage Crop Diseases Efficiently</p>
+            <a href="#scan" class="btn">Get Started</a>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <div class="main-content">
+        <div class="container">
+            <!-- Scan Section (Full-width box) -->
+            <div class="scan-section">
+                <div class="scan-box" id="scan">
+                    <h3>Scan Your Crops</h3>
+                    <p>Take a picture of your crop to scan and detect potential diseases using AI and ML.</p>
+                    <button class="btn btn-scan"><a href="./scanner2.html">Scan Now</button>
+                </div>
+            </div>
+
+            <!-- Flexbox Layout for Services -->
+            <h2 class="text-center mt-5">Our Services</h2>
+            <div class="services-section">
+                <!-- Government Schemes -->
+                <div class="service-box" id="govt-schemes">
+                    <i class="bi bi-bank" style="font-size: 2rem; margin-bottom: 10px;"></i>
+                    <h3><a href="./sih1_gov.html">Government Schemes</a></h3>
+                    <p>Access a comprehensive database of government schemes, grants, and subsidies designed to support
+                        farmers.</p>
+                </div>
+                <!-- Soil Health -->
+                <div class="service-box" id="soil-health">
+                    <i class="bi bi-patch-question" style="font-size: 2rem; margin-bottom: 10px;"></i>
+                    <h3><a href="./sih1_soil.html">Soil Health</a></h3>
+                    <p>Get detailed soil health information and guidance on maintaining soil fertility for optimal crop
+                        growth.</p>
+                </div>
+
+                <!-- Weather Forecast -->
+                <div class="service-box" id="weather-forecast">
+                    <i class="bi bi-cloud-sun" style="font-size: 2rem; margin-bottom: 10px;"></i>
+                    <h3><a href="./sih1_weather.html">Weather Forecast</a></h3>
+                    <p>Receive accurate weather forecasts to help plan your farming activities and protect crops from
+                        adverse conditions.</p>
+                </div>
+                
+
+                <!-- Disease Prediction -->
+                <div class="service-box" id="disease-prediction">
+                    <i class="bi bi-bug" style="font-size: 2rem; margin-bottom: 10px;"></i>
+                    <h3><a href="./scanner2.html">Disease Prediction</a></h3>
+                    <p>Leverage AI/ML technology to predict crop diseases early and take preventive actions to avoid
+                        crop losses.</p>
+                </div>
+                
+
+                <!-- Disease Prediction -->
+                <div class="service-box" id="disease-prediction">
+                    <i class="bi bi-droplet icon"style="font-size: 2rem; margin-bottom: 10px;"></i>
+                    <h3><a href="#">Water Footprint</a></h3>
+                    <p>Water is one of the most precious resources in agriculture, and understanding how much water is used to produce different crops is key to ensuring sustainable farming practices.</p>
+                </div>
+                
+
+                <!-- pesticides/fertilizers -->
+                <div class="service-box" id="disease-prediction">
+                    <i class="bi bi-tree icon" style="font-size: 2rem; margin-bottom: 10px;"></i>
+                    <h3><a href="#">Pesticides/Fertilizers</a></h3>
+                    <p>y empowering farmers with the knowledge to use pesticides more responsibly, we help improve crop quality, preserve soil health</p>
+                </div>  
+
+                <!-- Farmer Useful Things -->
+                <div class="service-box" id="farmer-resources">
+                    <i class="bi bi-tools" style="font-size: 2rem; margin-bottom: 10px;"></i>
+                    <h3><a href="./sih1_farmer.html">Farmer Useful Things</a></h3>
+                    <p>Discover tools, techniques, and resources that can help improve productivity and promote
+                        sustainable farming practices.</p>
+                </div>
+
+                <!-- Market Price -->
+                <div class="service-box" id="market-price">
+                    <i class="bi bi-bar-chart-line" style="font-size: 2rem; margin-bottom: 10px;"></i>
+                    <h3><a href="./sih1_market.html">Market Price</a></h3>
+                    <p>Stay updated with the latest market prices for various crops to make informed selling decisions.
+                    </p>
+                </div>
+            </div>
+
+            <!-- About Us Section -->
+            <div class="about-section" id="about">
+                <h2>About Us</h2>
+                <p>We are dedicated to helping farmers through AI-driven crop disease detection and comprehensive
+                    resources on soil health, weather forecasting, and government support. Our mission is to reduce crop
+                    loss and improve agricultural productivity.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <p>&copy; 2024 Agro-Tech Solutions. Empowering Farmers with Technology.</p>
+    </footer>
+
+    <!-- Bootstrap and JS Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
